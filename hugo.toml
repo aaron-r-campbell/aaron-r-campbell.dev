@@ -1,0 +1,6 @@
+baseURL = 'https://aaron-r-campbell.dev/'
+languageCode = 'en-us'
+title = 'Aaron Campbell'
+
+[markup.goldmark.renderer]
+  unsafe = true

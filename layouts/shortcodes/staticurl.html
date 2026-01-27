@@ -1,0 +1,2 @@
+{{ $path := .Get 0 }} {{ if hasPrefix $path "/" }} {{ $path = substr $path 1 }}
+{{ end }} {{ $path | absLangURL }}

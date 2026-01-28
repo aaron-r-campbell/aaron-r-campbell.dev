@@ -6,10 +6,6 @@
   display: none;
 }
 
-img {
-  filter: var(--img-filter);
-}
-
 * {
   color: var(--color-fg);
 }

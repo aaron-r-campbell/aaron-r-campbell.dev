@@ -6,9 +6,8 @@
   <body>
     <header>{{ partial "header.html" . }}</header>
     <main>
-      <div style="position: absolute; top: 0; right: 0; margin: var(--spacer)">
+      <div style="z-index: 10;position: absolute; top: 0; right: 0; margin: var(--spacer)">
         <input class="hidden" id="darkMode" type="checkbox" />
-        <!-- <label class="hidden" for="darkMode" tabindex="3"><img src="{{ "icons8/icons8-sun-90.png" | relURL }}"/></label> -->
         <label class="hidden" for="darkMode" tabindex="3">
           <span id="theme-icon-sun" hidden>
             <svg
@@ -68,15 +67,12 @@
           const stored = localStorage.getItem("colorscheme");
           const input = document.getElementById("darkMode");
           const label = document.querySelector('label[for="darkMode"]');
-          // const labelImage = label.querySelector('img');
           const sunIcon = document.getElementById("theme-icon-sun");
           const moonIcon = document.getElementById("theme-icon-moon");
           if (!input || !label) return;
 
           const setColorScheme = (dark) => {
             input.checked = dark;
-            // labelImage.src = dark ? "{{ "icons8/icons8-sun-90.png" | relURL }}" : "{{ "icons8/icons8-moon-90.png" | relURL }}";
-
             sunIcon.hidden = dark ? false : true;
             moonIcon.hidden = dark ? true : false;
             document.documentElement.classList.toggle("dark", dark);

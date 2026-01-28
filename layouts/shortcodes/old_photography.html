@@ -1,0 +1,56 @@
+{{ $files := sort (readDir "static/photography") "Name" "desc" }}
+
+<div class="gallery-container" style="column-count: 2; column-gap: 10px;">
+  {{ range $i, $f := $files }}
+    {{ if and (not $f.IsDir) (eq (mod $i 2) 0) }}
+      {{- $id := printf "img-%x" (sha1 $f.Name) -}}
+      <img
+        style="width: 100%; display: block; margin-bottom: 10px; cursor: pointer;"
+        src="{{ printf "/photography/%s" $f.Name | relURL }}"
+        alt="{{ $f.Name }}"
+        loading="lazy"
+        onclick="openModal(this.src)"
+      >
+    {{ end }}
+  {{ end }}
+  {{ range $i, $f := $files }}
+    {{ if and (not $f.IsDir) (eq (mod $i 2) 1) }}
+      {{- $id := printf "img-%x" (sha1 $f.Name) -}}
+      <img
+        style="width: 100%; display: block; margin-bottom: 10px; cursor: pointer;"
+        src="{{ printf "/photography/%s" $f.Name | relURL }}"
+        alt="{{ $f.Name }}"
+        loading="lazy"
+        onclick="openModal(this.src)"
+      >
+    {{ end }}
+  {{ end }}
+</div>
+
+<div id="imageModal" onclick="closeModal()" style="display:none; position:fixed; z-index:1000; left:0; top:0; width:100%; height:100%; background-color: rgba(0,0,0,0.7); cursor: zoom-out; align-items: center; justify-content: center;">
+  <img id="modalContent" style="max-width: calc(100% - 2 * var(--spacer)); max-height: calc(100% - 2 * var(--spacer)); margin: auto; display: block; box-shadow: 0 0 20px rgba(0,0,0,0.5);">
+</div>
+
+<script>
+function openModal(src) {
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalContent");
+  modal.style.display = "flex";
+  modalImg.src = src;
+  // Prevent scrolling on body while open
+  document.body.style.overflow = "hidden";
+}
+
+function closeModal() {
+  const modal = document.getElementById("imageModal");
+  modal.style.display = "none";
+  document.body.style.overflow = "auto";
+}
+
+// Close on 'Esc' key
+document.addEventListener('keydown', function(event) {
+  if (event.key === "Escape") {
+    closeModal();
+  }
+});
+</script>

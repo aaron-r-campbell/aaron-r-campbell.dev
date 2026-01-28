@@ -6,7 +6,7 @@ title: "Home"
 
 I’m a software engineer who’s just completed my degree and is always building something on the side.
 
-## Social:
+## Social
 
 &nbsp;&nbsp;{{< icon src="icons8/icons8-github-90.png" alt="Github:" >}}&nbsp;[@aaron-r-campbell](https://github.com/aaron-r-campbell)
 
@@ -16,7 +16,7 @@ I’m a software engineer who’s just completed my degree and is always buildin
 
 &nbsp;&nbsp;{{< icon src="icons8/icons8-mail-96.png" alt="Email:" >}}&nbsp;[aaron@keydesign.com](mailto:aaron@keydesign.com)
 
-## Biography:
+## Biography
 
 &nbsp;&nbsp;{{< icon src="icons8/icons8-work-90.png" alt="Work:" >}}&nbsp;Software Engineer - Cult Security
 

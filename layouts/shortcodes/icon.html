@@ -1,0 +1,12 @@
+{{- $src := .Get "src" -}}
+{{- $alt := .Get "alt" | default "icon" -}}
+{{- $id := printf "mask-%x" (sha1 $src) -}}
+
+<svg role="img" aria-label="{{ $alt }}" width="1em" height="1em" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <mask id="{{ $id }}">
+      <image href="{{ $src | relURL }}" width="100" height="100" />
+    </mask>
+  </defs>
+  <rect width="100" height="100" fill="currentColor" mask="url(#{{ $id }})" />
+</svg>

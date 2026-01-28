@@ -1,27 +1,33 @@
 {{ $files := sort (readDir "static/photography") "Name" "desc" }}
+{{ $images := slice }}
+{{ range $files }}
+  {{ if (not (hasPrefix .Name "tiny-")) }}
+    {{ $images = $images | append . }}
+  {{ end }}
+{{ end }}
 
 <div class="gallery-container" style="column-count: 2; column-gap: 10px;">
-  {{ range $i, $f := $files }}
+  {{ range $i, $f := $images }}
     {{ if and (not $f.IsDir) (eq (mod $i 2) 0) }}
       {{- $id := printf "img-%x" (sha1 $f.Name) -}}
       <img
         style="width: 100%; display: block; margin-bottom: 10px; cursor: pointer;"
-        src="{{ printf "/photography/%s" $f.Name | relURL }}"
+        src="{{ printf "/photography/tiny-%s" $f.Name | relURL }}"
         alt="{{ $f.Name }}"
         loading="lazy"
-        onclick="openModal(this.src)"
+        onclick="openModal({{ printf "/photography/%s" $f.Name | relURL}})"
       >
     {{ end }}
   {{ end }}
-  {{ range $i, $f := $files }}
+  {{ range $i, $f := $images }}
     {{ if and (not $f.IsDir) (eq (mod $i 2) 1) }}
       {{- $id := printf "img-%x" (sha1 $f.Name) -}}
       <img
         style="width: 100%; display: block; margin-bottom: 10px; cursor: pointer;"
-        src="{{ printf "/photography/%s" $f.Name | relURL }}"
+        src="{{ printf "/photography/tiny-%s" $f.Name | relURL }}"
         alt="{{ $f.Name }}"
         loading="lazy"
-        onclick="openModal(this.src)"
+        onclick="openModal({{ printf "/photography/%s" $f.Name | relURL}})"
       >
     {{ end }}
   {{ end }}

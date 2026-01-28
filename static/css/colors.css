@@ -1,0 +1,84 @@
+:root {
+  /* light mode settings */
+  --light-mode-color-bg: #f8f9fa;
+  --light-mode-color-fg: #5c6166;
+  --light-mode-color0: #000000;
+  --light-mode-color1: #ea6c6d;
+  --light-mode-color2: #6cbf43;
+  --light-mode-color3: #eca944;
+  --light-mode-color4: #3199e1;
+  --light-mode-color5: #9e75c7;
+  --light-mode-color6: #46ba94;
+  --light-mode-color7: #c7c7c7;
+  --light-mode-img-filter: none;
+
+  /* dark mode settings */
+  --dark-mode-color-bg: #0b0e14;
+  --dark-mode-color-fg: #c7c7c7;
+  --dark-mode-color0: #11151c;
+  --dark-mode-color1: #ea6c73;
+  --dark-mode-color2: #7fd962;
+  --dark-mode-color3: #f9af4f;
+  --dark-mode-color4: #53bdfa;
+  --dark-mode-color5: #cda1fa;
+  --dark-mode-color6: #90e1c6;
+  --dark-mode-color7: #ffffff;
+  --dark-mode-img-filter: invert(1) contrast(1.1);
+
+  /* default to light mode */
+  --color-bg: var(--light-mode-color-bg);
+  --color-fg: var(--light-mode-color-fg);
+  --color0: var(--light-mode-color0);
+  --color1: var(--light-mode-color1);
+  --color2: var(--light-mode-color2);
+  --color3: var(--light-mode-color3);
+  --color4: var(--light-mode-color4);
+  --color5: var(--light-mode-color5);
+  --color6: var(--light-mode-color6);
+  --color7: var(--light-mode-color7);
+  --img-filter: var(--light-mode-img-filter);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: var(--dark-mode-color-bg);
+    --color-fg: var(--dark-mode-color-fg);
+    --color0: var(--dark-mode-color0);
+    --color1: var(--dark-mode-color1);
+    --color2: var(--dark-mode-color2);
+    --color3: var(--dark-mode-color3);
+    --color4: var(--dark-mode-color4);
+    --color5: var(--dark-mode-color5);
+    --color6: var(--dark-mode-color6);
+    --color7: var(--dark-mode-color7);
+    --img-filter: var(--dark-mode-img-filter);
+  }
+}
+
+html.dark {
+  --color-bg: var(--dark-mode-color-bg);
+  --color-fg: var(--dark-mode-color-fg);
+  --color0: var(--dark-mode-color0);
+  --color1: var(--dark-mode-color1);
+  --color2: var(--dark-mode-color2);
+  --color3: var(--dark-mode-color3);
+  --color4: var(--dark-mode-color4);
+  --color5: var(--dark-mode-color5);
+  --color6: var(--dark-mode-color6);
+  --color7: var(--dark-mode-color7);
+  --img-filter: var(--dark-mode-img-filter);
+}
+
+html.light {
+  --color-bg: var(--light-mode-color-bg);
+  --color-fg: var(--light-mode-color-fg);
+  --color0: var(--light-mode-color0);
+  --color1: var(--light-mode-color1);
+  --color2: var(--light-mode-color2);
+  --color3: var(--light-mode-color3);
+  --color4: var(--light-mode-color4);
+  --color5: var(--light-mode-color5);
+  --color6: var(--light-mode-color6);
+  --color7: var(--light-mode-color7);
+  --img-filter: var(--light-mode-img-filter);
+}

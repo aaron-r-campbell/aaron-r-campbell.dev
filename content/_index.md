@@ -6,18 +6,20 @@ title: "Home"
 
 I’m a software engineer who’s just completed my degree and is always building something on the side.
 
-## Social
+## Social:
 
-#### <img style="height:1em;margin-right:0.5em;" src="{{< staticurl "icons8/icons8-github-90.png" >}}"/>Github: [@aaron-r-campbell](https://github.com/aaron-r-campbell)
+&nbsp;&nbsp;![Github:]({{< staticurl "icons8/icons8-github-90.png" >}}) [@aaron-r-campbell](https://github.com/aaron-r-campbell)
 
-#### <img style="height:1em;margin-right:0.5em;" src="{{< staticurl "icons8/icons8-linkedin-90.png" >}}"/> LinkedIn: [@aaron-r-campbell](https://www.linkedin.com/in/aaron-r-campbell)
+&nbsp;&nbsp;![LinkedIn:]({{< staticurl "icons8/icons8-linkedin-90.png" >}}) [@aaron-r-campbell](https://www.linkedin.com/in/aaron-r-campbell)
 
-## Biography
+&nbsp;&nbsp;![Signal:]({{< staticurl "signal_logo/Signal-Logo-Black.svg" >}}) [@aaron-r-campbell.01](https://signal.me/#eu/l8gnN_DhRPE6iU8cgj0vRDD38L2uHInYIN4TH1mxaPlq18T6Ys5Gb4gDyVD4qMXQ)
 
-#### <img style="height:1em;margin-right:0.5em;" src="{{< staticurl "icons8/icons8-work-90.png" >}}" alt="Work:"/> Software Engineer - Cult Security
+&nbsp;&nbsp;![Email:]({{< staticurl "icons8/icons8-mail-96.png" >}}) [aaron@keydesign.com](mailto:aaron@keydesign.com)
 
-#### <img style="height:1em;margin-right:0.5em;" src="{{< staticurl "icons8/icons8-graduate-90.png" >}}" alt="Education:"/> MSc in Security and Cloud Computing - Aalto University
+## Biography:
 
-#### <img style="height:1em;margin-right:0.5em;" src="{{< staticurl "icons8/icons8-graduate-90.png" >}}" alt="Education:"/> BSc in Digital Systems and Design - Aalto University
+&nbsp;&nbsp;![Work:]({{< staticurl "icons8/icons8-work-90.png" >}}) Software Engineer - Cult Security
 
-<!-- #### [Recently completed a Masters in Security and Cloud Computing](https://www.aalto.fi/en/study-options/security-and-cloud-computing-computer-communication-and-information-sciences-master-of-science) at [Aalto University](https://www.aalto.fi/). (2023-2025) -->
+&nbsp;&nbsp;![Education:]({{< staticurl "icons8/icons8-graduate-90.png" >}}) MSc in Security and Cloud Computing - Aalto University
+
+&nbsp;&nbsp;![Education:]({{< staticurl "icons8/icons8-graduate-90.png" >}}) BSc in Digital Systems and Design - Aalto University

@@ -5,7 +5,46 @@
   </head>
   <body>
     <header>{{ partial "header.html" . }}</header>
-    <main>{{ block "main" . }}{{ end }}</main>
+    <main>
+      <div style="position: absolute; top: 0; right: 0">
+        <input class="hidden" id="darkMode" type="checkbox" />
+        <label class="hidden" for="darkMode" tabindex="3"><img src="{{ "icons8/icons8-sun-90.png" | relURL }}"/></label>
+      </div>
+      <script>
+        (() => {
+          const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+          const stored = localStorage.getItem("colorscheme");
+          const input = document.getElementById("darkMode");
+          const label = document.querySelector('label[for="darkMode"]');
+          const labelImage = label.querySelector('img');
+          if (!input || !label) return;
+
+          const setColorScheme = (dark) => {
+            input.checked = dark;
+            labelImage.src = dark ? "{{ "icons8/icons8-sun-90.png" | relURL }}" : "{{ "icons8/icons8-moon-90.png" | relURL }}";
+            document.documentElement.classList.toggle("dark", dark);
+            document.documentElement.classList.toggle("light", !dark);
+          };
+
+          input.addEventListener("change", () => {
+            localStorage.setItem(
+              "colorscheme",
+              input.checked ? "dark" : "light",
+            );
+            setColorScheme(input.checked);
+          });
+          mediaQuery.addEventListener("change", () => {
+            const stored = localStorage.getItem("colorscheme");
+            setColorScheme(stored ? stored == "dark" : mediaQuery.matches);
+          });
+
+          setColorScheme(stored ? stored === "dark" : mediaQuery.matches);
+          label.classList.toggle("hidden", false);
+        })();
+      </script>
+
+      {{ block "main" . }}{{ end }}
+    </main>
     <footer>{{ partial "footer.html" . }}</footer>
   </body>
 </html>
